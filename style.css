@@ -1,0 +1,62 @@
+body {
+    background-color: #DDB8A6;
+}
+
+.header {
+    background-color: #893F04;
+    border-style: outset;
+    border-color: #893F04;
+    border-width: 10px;;
+}
+
+h1 {
+    color: white;
+    font-size: 38px;
+    font-family: 'Reem Kufi Ink', sans-serif;
+    padding-bottom: 0px;
+    text-align: center;
+}
+
+.name {
+    color: white;
+    font-family: 'Reem Kufi Ink', sans-serif;
+    font-size: 15px;
+}
+
+.row1 {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.response {
+    background-color: #D49B7E;
+    color: white;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    padding-left: 2%;
+    padding-right: 2%;
+    border-radius: 15px;
+    margin: 20px;
+    text-align: center;
+}
+
+h4 {
+    font-family: 'Reem Kufi Ink', sans-serif;
+    font-size: 25px;
+}
+
+h3 {
+    font-family: 'Reem Kufi Ink', sans-serif;
+    font-size: 22px;
+    color: white;
+    text-align: center;
+}
+
+a {
+    color: white;
+}
+
+p{
+    font-size: 22px;
+}
