@@ -1,0 +1,63 @@
+.bg {
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+    grid-template-rows: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+    background-color: #348C31;
+    border-color: #348C31;
+}
+
+.man {
+    z-index: 2;
+    grid-column: 2;
+    grid-row: 6;
+    text-align: center;
+    animation-name: man-running;
+    animation-duration: 4s;
+    animation-timing-function: ease-out;
+}
+
+.woman{
+    z-index: 2;
+    grid-column: 2 ;
+    grid-row: 3;
+    text-align: center;
+    animation-name: woman-running;
+    animation-duration: 2.5s;
+    animation-timing-function: ease-in;
+}
+
+.finish {
+    z-index: 2;
+    text-align: center;
+    grid-column: 5;
+    grid-row: 5;
+    display: none;
+}
+
+@keyframes man-running {
+    0%   { grid-column: 2 ; grid-row: 6; }
+    15%  { grid-column: 3 ; grid-row: 6; }
+    25%  { grid-column: 4  ; grid-row: 6; }
+    35%  { grid-column: 5  ; grid-row: 6; }
+    45%  { grid-column: 6  ; grid-row: 6; }
+    55%  { grid-column: 7  ; grid-row: 6; }
+  }
+
+  @keyframes woman-running {
+    0%   { grid-column: 2 ; grid-row: 3 }
+    15%  { grid-column: 3 ; grid-row: 3 }
+    25%  { grid-column: 4  ; grid-row: 3 }
+    35%  { grid-column: 4  ; grid-row: 3 }
+    45%  { grid-column: 5  ; grid-row: 3}
+    55%  { grid-column: 6  ; grid-row: 3 }
+    65%  { grid-column: 7  ; grid-row: 3 }
+  }
+
+.track {
+    z-index: 0;
+    grid-column: span 3 / 6;
+    grid-row: span 4 / 7;
+    text-align: center;
+}
