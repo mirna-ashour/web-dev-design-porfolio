@@ -4,8 +4,8 @@
     display: grid;
     grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
     grid-template-rows: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
-    background-color: #348C31;
-    border-color: #348C31;
+    background-color: #1f6e1d;
+    border-color: #1f6e1d;
 }
 
 .man {
