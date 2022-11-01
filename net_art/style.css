@@ -1,0 +1,109 @@
+html, body {
+    height: 100%;
+    width: 100%;
+  }
+  
+  
+  .gradient {
+      background-image: linear-gradient(rgb(13, 13, 213), purple);
+  }
+  
+  .title {
+      text-align: center;
+      font-family:'Orbitron', sans-serif;
+      font-size: 40px;
+      color: white;
+      text-shadow: 6px 6px black;
+      margin-top: 20%;
+  }
+  
+  .title:hover {
+      color: black;
+      text-shadow: 6px 6px white;
+  }
+  
+  .login {
+    display: center;
+    text-align: center;
+    font-family: 'VT323', monospace;
+    background-color: #A29F99;
+    border: 3px solid white;
+    width: 500px;
+    margin-left:auto;
+    margin-right:auto;
+  } 
+  
+  
+  .loginbody {
+    display: center;
+    background-color: #3a6fa6;
+    height: 100%;
+    width: 100%;
+    padding-top: 15%;
+    margin-left: auto;
+    margin-right: auto;
+  } 
+  
+  
+  .robot {
+      height: 100vh;
+      width: 100vw;
+      display: grid;
+      grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+      grid-template-rows: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+      /* background-image: linear-gradient(green, yellow); */
+  }
+  
+  .computer {
+      grid-row: 1;
+      grid-column: span 1 / 5;
+  }
+  
+  .speaker1 {
+      grid-row: 6;
+      grid-column: 2;
+  }
+  
+  .speaker2 {
+      grid-row: 6;
+      grid-column: 8;
+  }
+  
+  .animate-speaker {
+      animation: shake 0.8s; 
+      animation-iteration-count: infinite; 
+  }
+  
+  .screensaver {
+      grid-row: 2;
+      grid-column: span 1/6;
+  }
+  
+  @keyframes shake {
+      0% { transform: translate(1px, 1px) rotate(0deg); }
+      10% { transform: translate(-1px, -2px) rotate(-1deg); }
+      20% { transform: translate(-3px, 0px) rotate(1deg); }
+      30% { transform: translate(3px, 2px) rotate(0deg); }
+      40% { transform: translate(1px, -1px) rotate(1deg); }
+      50% { transform: translate(-1px, 2px) rotate(-1deg); }
+      60% { transform: translate(-3px, 1px) rotate(0deg); }
+      70% { transform: translate(3px, 1px) rotate(-1deg); }
+      80% { transform: translate(-1px, -1px) rotate(1deg); }
+      90% { transform: translate(1px, 2px) rotate(0deg); }
+      100% { transform: translate(1px, -2px) rotate(-1deg); }
+    }
+  
+  .background-image{
+    width: 100%;
+    position: relative;
+  }
+  
+  .overlay{
+    position: absolute;
+    top: 80px;
+    right: 15px;
+    font-weight: bold;
+    text-align: right;
+    font-size: 30px;
+  }
+  
