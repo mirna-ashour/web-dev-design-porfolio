@@ -3,23 +3,25 @@ html, body {
     width: 100%;
   }
   
+                            /* CYBERPUNK BAND TITLE PAGE */
   
   .gradient {
       background-image: linear-gradient(rgb(13, 13, 213), purple);
   }
   
   .title {
-      text-align: center;
-      font-family:'Orbitron', sans-serif;
-      font-size: 40px;
-      color: white;
-      text-shadow: 6px 6px black;
-      margin-top: 20%;
+    text-align: center;
+    font-family:'Orbitron', sans-serif;
+    font-size: 40px;
+    color: white;
+    text-shadow: 8px 8px black;
+    margin-top: 20%;
+    grid-row: 8;
   }
   
   .title:hover {
-      color: black;
-      text-shadow: 6px 6px white;
+    color: black;
+    text-shadow: 6px 6px white;
   }
   
   .login {
@@ -29,6 +31,7 @@ html, body {
     background-color: #A29F99;
     border: 3px solid white;
     width: 500px;
+    height: 30%;
     margin-left:auto;
     margin-right:auto;
   } 
@@ -44,6 +47,7 @@ html, body {
     margin-right: auto;
   } 
   
+                                  /* ANIMATION CSS */
   
   .robot {
       height: 100vh;
@@ -51,7 +55,6 @@ html, body {
       display: grid;
       grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
       grid-template-rows: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
-      /* background-image: linear-gradient(green, yellow); */
   }
   
   .computer {
@@ -74,9 +77,9 @@ html, body {
       animation-iteration-count: infinite; 
   }
   
-  .screensaver {
-      grid-row: 2;
-      grid-column: span 1/6;
+  .cursor {
+      grid-row: 3;
+      grid-column: span 1/7;
   }
   
   @keyframes shake {
@@ -93,17 +96,202 @@ html, body {
       100% { transform: translate(1px, -2px) rotate(-1deg); }
     }
   
+  /*                                 LOGIN PAGE CSS */
+  
   .background-image{
     width: 100%;
     position: relative;
   }
   
   .overlay{
+    font-family:'Orbitron', sans-serif;
     position: absolute;
     top: 80px;
     right: 15px;
-    font-weight: bold;
-    text-align: right;
+    font-weight: normal;
+    text-align: left;
+    font-size: 18px;
+  }
+  
+  /*                                 SLIDE TEMPLATE CSS */
+  
+  
+  .slide-template {
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5%;
+    grid-template-rows:  5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5%;
+  }
+  
+  .menu {
+    grid-row: 1 ;
+    grid-column-start: 2;
+    grid-column-end: 21;
+    background-color: #0000bb;
+    color: white;
+    font-size: 30px;
+    font-family: 'VT323', monospace;
+    display: flex;
+    align-items: center;
+    padding-left: 3%;
+  }
+  
+  .menu-icon {
+    grid-row: 1;
+    grid-column: 1;
+    background-color: #a1182f;
+    color: white;
+    border-style: outset;
+    border-color: #a1182f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .button-next {
+    grid-row: 1;
+    grid-column: 20;
+    background-color: #cecece;
+    border-width: 4px;
+    border-style: outset;
+    border-color: #606060;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'VT323', monospace;
     font-size: 30px;
   }
   
+  .button-prev {
+    grid-row: 1;
+    grid-column: 19;
+    background-color: #cecece;
+    border-color: #606060;
+    border-width: 4px;
+    border-style: outset;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'VT323', monospace;
+    font-size: 30px;
+  }
+  
+  a:link {
+    color: black; 
+    background-color: transparent; 
+    text-decoration: none;
+  }
+  
+  a:visited {
+    color: black;
+    background-color: transparent;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    
+  }
+  
+  .navbar-item1 {
+    grid-row: 2;
+    grid-column: 1 / 2;
+    background-color: #cecece;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'VT323', monospace;
+    font-size: 25px;
+  }
+  
+  .navbar-item2 {
+    grid-row: 2;
+    grid-column: 2 / 3;
+    background-color: #cecece;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'VT323', monospace;
+    font-size: 25px;
+  }
+  
+  .navbar-item3 {
+    grid-row: 2;
+    grid-column: 3 / 4;
+    background-color: #cecece;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'VT323', monospace;
+    font-size: 25px;
+  }
+  
+  .navbar-item4 {
+    grid-row: 2;
+    grid-column: 4 / 5;
+    background-color: #cecece;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   font-family: 'VT323', monospace;
+    font-size: 25px;
+  }
+  
+  .navbar-item5 {
+    grid-row: 2;
+    grid-column: 5 / 6;
+    background-color: #cecece;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'VT323', monospace;
+    font-size: 25px;
+  }
+  
+  .navbar-item6 {
+    grid-row: 2;
+    grid-column: 6 / 7;
+    background-color: #cecece;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   font-family: 'VT323', monospace;
+    font-size: 25px;
+  }
+  
+  .navbar-item7 {
+    grid-row: 2;
+    grid-column: 7 / 21;
+    background-color: #cecece;
+    display: flex;
+    align-items: center;
+   font-family: 'VT323', monospace;
+    font-size: 25px;
+  }
+  
+  /*                                         SLIDE 1 CSS */
+  
+  table, th, td {
+    border:2px solid black;
+    text-align: center;
+    font-family: 'VT323', monospace;
+  }
+  
+  .overlay-slide1 {
+    font-family:'Orbitron', sans-serif;
+    font-weight: normal;
+    text-align: left;
+    font-size: 23px;
+    grid-column: 1;
+    grid-column-end: 21;
+    grid-row: 4;
+    grid-row-end: 21;
+  }
+  
+  .img1:hover {
+    transform: scale(2); 
+  }
+  
+  .img2:hover {
+  transform: scale(1.9); 
+  }
