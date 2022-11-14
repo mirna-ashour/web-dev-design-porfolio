@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <audio controls id="audio">
+        <source src="" type="audio/mpeg">
+        Your browser does not support the audio tag.
+    </audio>
     <title>The Button</title>
 </head>
 
@@ -30,20 +34,21 @@
 </style>
 
 <script>
-    const buttons = [   ["buttons/clothing.jpg", "url(bgs/background_clothing.jpg)"],
-                    ["buttons/computer.jpg", "url(bgs/background_computer.jpg)"],
-                    ["buttons/crosswalk.jpg", "url(bgs/background_crosswalk.jpg)"],
-                    ["buttons/elevator.jpg", "url(bgs/background_elevator.jpg)"],
-                    ["buttons/ignition.jpg", "url(bgs/background_ignition.jpg)"],
-                    ["buttons/play.jpg", "url(bgs/background_spotify.jpg)"],
-                    ["buttons/staples.jpg", "url(bgs/background_staples.jpg)"],
-                    ["buttons/tv.jpg", "url(bgs/background_tv.jpg)"],
-                    ["buttons/youtube.jpg", "url(bgs/background_youtube.jpg)"] ];
+    const buttons = [   ["buttons/clothing.jpg", "url(bgs/background_clothing.jpg)", ""],
+                    ["buttons/computer.jpg", "url(bgs/background_computer.jpg)", "computer.mp3"],
+                    ["buttons/crosswalk.jpg", "url(bgs/background_crosswalk.jpg)", "crosswalk.mp3"],
+                    ["buttons/elevator.jpg", "url(bgs/background_elevator.jpg)", "elevator.mp3"],
+                    ["buttons/ignition.jpg", "url(bgs/background_ignition.jpg)", "ignition.mp3"],
+                    ["buttons/play.jpg", "url(bgs/background_spotify.jpg)", ""],
+                    ["buttons/staples.jpg", "url(bgs/background_staples.jpg)", "staples.mp3"],
+                    ["buttons/tv.jpg", "url(bgs/background_tv.jpg)", "tv.mp3"],
+                    ["buttons/youtube.jpg", "url(bgs/background_youtube.jpg)", "youtube.mp3"] ];
 
     function runScript() {
         var rand = Math.floor(Math.random()*buttons.length);
         document.getElementById("img").src=buttons[rand][0];
         document.getElementById("back-drop").style.backgroundImage=buttons[rand][1];
+        document. getElementById("audio"). setAttribute('src', buttons[rand][2]);
     };
 </script>
 
