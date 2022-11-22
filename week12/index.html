@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@200;400&family=Rubik+Microbe&display=swap" rel="stylesheet">
+    <title>Massage</title>
+</head>
+
+<script>
+    function buttonHoverTelephone() {
+        document.getElementById("telephone").src="images/telephone.jpg";
+        document.getElementById("telephone").className="animate-telephone";
+    }  
+    
+    function buttonUnhoverTelephone() {
+        document.getElementById("telephone").src="images/telephone_in.jpg";
+        document.getElementById("telephone").className="telephone";
+    }
+
+    function buttonHoverTv() {
+        document.getElementById("tv").src="images/hypno.jpg";
+    }  
+    
+    function buttonUnhoverTv() {
+        document.getElementById("tv").src="images/tv_in.jpg";
+    }
+
+    function buttonHoverSword() {
+        document.getElementById("sword1").src="images/sword.jpg";
+        document.getElementById("sword2").src="images/sword.jpg";
+        document.getElementById("sword1").className="sword1-move"
+        document.getElementById("sword2").className="sword2-move"
+    }  
+
+    function buttonUnhoverSword() {
+        document.getElementById("sword1").src="images/sword_in.jpg";
+        document.getElementById("sword2").src="images/sword_in.jpg";
+        document.getElementById("sword1").className="sword1"
+        document.getElementById("sword2").className="sword2"
+    }
+
+    function buttonHoverBrain() {
+        document.getElementById("brain").src="images/brain.jpg";
+    }  
+
+    function buttonUnhoverBrain() {
+        document.getElementById("brain").src="images/brain_in.jpg";
+    }
+</script>
+
+<body>
+    <div class="bg-grid">
+        <h2>THE MEDIUM IS THE MASSAGE</h2>
+        <button class="q1" onmouseover="buttonHoverTelephone()" onmouseout="buttonUnhoverTelephone()">
+            <img id="telephone" class="telephone" width="230px" src="images/telephone_in.jpg"/>
+            <break></break>
+            <p>Societies have been shaped more by the nature of the media by which men communicate then by the content of the communication</p>
+        </button>
+        <div class="q2" onmouseover="buttonHoverSword()" onmouseout="buttonUnhoverSword()">
+            <img id="sword1" class="sword1" width="150" src="images/sword_in.jpg"/>
+            <img id="sword2" class="sword2" width="150" src="images/sword_in.jpg"/>
+            <p>When two seemingly disparate elements are imaginatively poised, put in apposition to new and unique ways, startling discoveries often result</p>
+        </div>
+        <div class="q3" onmouseover="buttonHoverBrain()" onmouseout="buttonUnhoverBrain()">
+            <img id="brain" width="200px" src="images/brain_in.jpg"/>
+            <p>The whirlpool of information fathered by electric media far surpasses any possible influence mom and dad now bring to bear. Character no longer is shaped by only two earnest, fumbling experts. Now all the world’s a sage</p> 
+        </div>
+        <div class="q4" onmouseover="buttonHoverTv()" onmouseout="buttonUnhoverTv()">
+            <img id="tv" width="170px" src="images/tv_in.jpg"/>
+            <p>Today’s television child is attuned to up-to-the-minute “adult” news and is bewildered when he enters the nineteenth century environment that still characterizes the educational establishment where information is scarce but ordered and structured by fragmented, classified patterns, subjects and schedules</p> 
+        </div>
+    </div>
+</body>
+</html>
