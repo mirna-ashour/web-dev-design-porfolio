@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <title>Classics Shelf</title>
+</head>
+
+<body class="bg-zoomed">
+    <div class= "book-cover" id="book-cover">
+        <button class="close-prompt" onclick="bookDisappear()">X</button>
+        <button class="open" onclick="openBook()">></button>
+    </div>
+    <div class= "open-book" id= "open-book">
+        <div class="first-page">
+            <button class="close-prompt" onclick="displayDisappear()">X</button>
+            <h2 id="author-name"> </h2>
+            <figure class= "author"><img id="author-img" src="authors/jk.jpg" width="350px" height="400"/></figure>
+        </div>
+        <div class="second-page">
+            <p class="summary-title">Book summary:</p>
+            <p id="summary"> </p>
+            <p id="rating" class="rating"> </p>
+        </div>
+    </div>
+    <button class="back-button" onclick="location.href='index.html'">home</button>
+    <center>
+        <div class="title">
+            LGBTQ
+        </div>
+    </center>
+    <div class="bg-shelves">
+        <div class="bg-shelves-inner">
+            <div>
+                <button class="book-button"><img class="all-books" src="images/book-spine.png"/></button>
+            </div>
+            <div>
+                <button class="book-button"><img class="all-books" src="images/book-spine.png"/></button>
+            </div>
+            <div class="activated">
+                <button class="book-button" id="aciman" onclick="displayAppear(this.id)"  ><img class="all-books" src="images/book-spine.png"/></button>
+            </div>
+            <div>
+                <button class="book-button"><img class="all-books" src="images/book-spine.png"/></button>
+            </div>
+            <div>
+                <button class="book-button"><img class="all-books" src="images/book-spine.png"/></button>
+            </div>
+            <div>
+                <button class="book-button" ><img class="all-books" src="images/book-spine.png"/></button>
+            </div>
+            <div>
+                <button class="book-button"><img class="all-books" src="images/book-spine.png"/></button>
+            </div>
+            <div>
+                <button class="book-button"><img class="all-books" src="images/book-spine.png"/></button>
+            </div>
+            <div>
+                <button class="book-button" ><img class="all-books" src="images/book-spine.png"/></button>
+            </div>
+            <div class="activated">
+                <button class="book-button" id="madeline" onclick="displayAppear(this.id)"  ><img class="all-books" src="images/book-spine.png"/></button>
+            </div>
+        </div>
+    </div>
+    <div class="bg-shelves">
+        <div class="bg-shelves-inner">
+            <div class="activated">
+                <button class="book-button"  id="woolf" onclick="displayAppear(this.id)"  ><img class="all-books" src="images/book-spine.png"/></button>            
+            </div>
+            <div>
+                <button class="book-button"><img class="all-books" src="images/book-spine.png"/></button>            
+            </div>
+            <div>
+                <button class="book-button"><img class="all-books" src="images/book-spine.png"/></button>            
+            </div>
+            <div>
+                <button class="book-button"><img class="all-books" src="images/book-spine.png"/></button>            
+            </div>
+            <div class="activated">
+                <button class="book-button" id="baldwin" onclick="displayAppear(this.id)" ><img class="all-books" src="images/book-spine.png"/></button>
+            </div>
+            <div>
+                <button class="book-button"><img class="all-books" src="images/book-spine.png"/></button>            
+            </div>
+            <div>
+                <button class="book-button"><img class="all-books" src="images/book-spine.png"/></button>           
+             </div>
+            <div>
+                <button class="book-button"><img class="all-books" src="images/book-spine.png"/></button>            
+            </div>
+            <div>
+                <button class="book-button"><img class="all-books" src="images/book-spine.png"/></button>            
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+
+    class book_info {
+        constructor(title, author, summary, book_cover, author_pic, rating) {
+            this.title = title;
+            this.author = author;
+            this.summary = summary;
+            this.book_cover = book_cover;
+            this.author_pic = author_pic;
+            this.rating = rating;
+        }
+    } 
+    
+    const aciman = new book_info("Call me by your name", "Andre Aciman", 
+    "Call Me by Your Name is the story of a sudden and powerful romance that blossoms between an adolescent boy and a summer guest at his parents' cliff-side mansion on the Italian Riviera.  During the restless summer weeks that follow, unrelenting buried currents of obsession and fear, fascination and desire, intensify their passion as they test the charged ground between them. What grows from the depths of their spirits is a romance of scarcely six weeks' duration and an experience that marks them for a lifetime. For what the two discover on the Riviera and during a sultry evening in Rome is the one thing both already fear they may never truly find again: total intimacy."
+    , "url(books/cmbyn.jpg)", "authors/aciman.jpg"
+    , "My rating: 5/5 stars");
+    
+    const madeline = new book_info("The Song of achilles", "Madeline Miller",
+    "Achilles, \"the best of all the Greeks,\" son of the cruel sea goddess Thetis and the legendary king Peleus, is strong, swift, and beautiful, irresistible to all who meet him. Patroclus is an awkward young prince, exiled from his homeland after an act of shocking violence. Brought together by chance, they forge an inseparable bond, despite risking the gods' wrath."
+    , "url(books/achilles.jpg)", "authors/madeline.jpg", "My rating: 4/5 stars");
+
+    const woolf = new book_info("Orlando", "Virginia Woolf", 
+    "'The longest and most charming love letter in literature', playfully constructs the figure of Orlando as the fictional embodiment of Woolf's close friend and lover, Vita Sackville-West. Spanning three centuries, the novel opens as Orlando, a young nobleman in Elizabeth's England, lies locked in the embrace of the Great Frost. At the midpoint of the novel, Orlando, now an ambassador in Constantinople, awakes to find that he is now a woman, and the novel indulges in farce and irony to consider the roles of women in the 18th and 19th centuries."
+    , "url(books/orlando.jpg)", "authors/woolf.jpg", "My rating: 5/5 stars");
+
+    const baldwin = new book_info("Giovanni's Room", "James Baldwin", 
+    "Set in the contemporary Paris of American  expatraites, liasons, and violence, a young man finds  himself caught between desire and conventional  morality. James Baldwin's brilliant narrative delves  into the mystery of loving with a sharp, probing  imagination, and he creates a moving, highly  controversial story of death and passion that reveals the  unspoken complexities of the heart."
+    , "url(books/room.jpg)", "authors/baldwin.jpg"
+    , "My rating: 5/5 stars");
+
+
+    function displayAppear(id) {
+        document.getElementById("book-cover").style.display = 'flex';
+
+        switch(id) {
+            case "aciman":
+                document.getElementById("book-cover").style.backgroundImage = aciman.book_cover;  
+                document.getElementById("author-name").innerHTML = aciman.author;
+                document.getElementById("author-img").src = aciman.author_pic;
+                document.getElementById("summary").innerHTML = aciman.summary;
+                document.getElementById("rating").innerHTML = aciman.rating;
+                break;
+            
+            case "madeline":
+                document.getElementById("book-cover").style.backgroundImage = madeline.book_cover;  
+                document.getElementById("author-name").innerHTML = madeline.author;
+                document.getElementById("author-img").src = madeline.author_pic;
+                document.getElementById("summary").innerHTML = madeline.summary;
+                document.getElementById("rating").innerHTML = madeline.rating;
+                break;  
+                
+            case "woolf":
+                document.getElementById("book-cover").style.backgroundImage = woolf.book_cover;  
+                document.getElementById("author-name").innerHTML = woolf.author;
+                document.getElementById("author-img").src = woolf.author_pic;
+                document.getElementById("summary").innerHTML = woolf.summary;
+                document.getElementById("rating").innerHTML = woolf.rating;
+                break;  
+
+            case "baldwin":
+                document.getElementById("book-cover").style.backgroundImage = baldwin.book_cover;   
+                document.getElementById("author-name").innerHTML = baldwin.author;
+                document.getElementById("author-img").src = baldwin.author_pic;
+                document.getElementById("summary").innerHTML = baldwin.summary;
+                document.getElementById("rating").innerHTML = baldwin.rating;
+                break;  
+        }   
+    };
+
+    function bookDisappear(){
+        document.getElementById("book-cover").style.display = 'none';
+    };
+
+    function displayDisappear(){
+        document.getElementById("open-book").style.display = 'none';
+    };
+
+    function openBook(id){
+        document.getElementById("book-cover").style.display = 'none';
+        document.getElementById("open-book").style.display = 'flex';
+    };
+    
+</script>
+
+</html>

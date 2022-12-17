@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script type="text/javascript" src="turnjs4/lib/turn.js"></script>
+    <title>Classics Shelf</title>
+</head>
+
+<body class="bg-zoomed">
+    <div class= "book-cover" id="book-cover">
+        <button class="close-prompt" onclick="bookDisappear()">X</button>
+        <button class="open" onclick="openBook()">></button>
+    </div>
+    <div class= "open-book" id= "open-book">
+        <div class="first-page">
+            <button class="close-prompt" onclick="displayDisappear()">X</button>
+            <h2 id="author-name"> </h2>
+            <figure class= "author"><img id="author-img" src="authors/jk.jpg" width="350px" height="400"/></figure>
+        </div>
+        <div class="second-page">
+            <p class="summary-title">Book summary:</p>
+            <p id="summary"> </p>
+            <p id="rating" class="rating"> </p>
+        </div>
+    </div>
+    <button class="back-button" onclick="location.href='index.html'">home</button>
+    <center>
+        <div class="title">
+            FICTION
+        </div>
+    </center>
+    <div class="bg-shelves">
+        <div class="bg-shelves-inner">
+            <div>
+                <button class="book-button"><img class="all-books" src="images/book-spine.png"/></button>
+            </div>
+            <div>
+                <button class="book-button"><img class="all-books" src="images/book-spine.png"/></button>
+            </div>
+            <div class="activated">
+                <button class="book-button" id="baldwin" onclick="displayAppear(this.id)"  ><img class="all-books" src="images/book-spine.png"/></button>
+            </div>
+            <div>
+                <button class="book-button"><img class="all-books" src="images/book-spine.png"/></button>
+            </div>
+            <div>
+                <button class="book-button" ><img class="all-books" src="images/book-spine.png"/></button>
+            </div>
+            <div class="activated">
+                <button class="book-button" id="hosseini" onclick="displayAppear(this.id)"  ><img class="all-books" src="images/book-spine.png"/></button>
+            </div>
+            <div>
+                <button class="book-button"><img class="all-books" src="images/book-spine.png"/></button>
+            </div>
+            <div>
+                <button class="book-button"><img class="all-books" src="images/book-spine.png"/></button>
+            </div>
+            <div>
+                <button class="book-button" ><img class="all-books" src="images/book-spine.png"/></button>
+            </div>
+            <div>
+                <button class="book-button"><img class="all-books" src="images/book-spine.png"/></button>
+            </div>
+        </div>
+    </div>
+    <div class="bg-shelves">
+        <div class="bg-shelves-inner">
+            <div>
+                <button class="book-button"><img class="all-books" src="images/book-spine.png"/></button>           
+             </div>
+            <div>
+                <button class="book-button"><img class="all-books" src="images/book-spine.png"/></button>            
+            </div>
+            <div>
+                <button class="book-button"><img class="all-books" src="images/book-spine.png"/></button>            
+            </div>
+            <div class="activated">
+                <button class="book-button"  id="murakami" onclick="displayAppear(this.id)"  ><img class="all-books" src="images/book-spine.png"/></button>            
+            </div>
+            <div>
+                <button class="book-button"><img class="all-books" src="images/book-spine.png"/></button>            
+            </div>
+            <div>
+                <button class="book-button"><img class="all-books" src="images/book-spine.png"/></button>            
+            </div>
+            <div>
+                <button class="book-button"><img class="all-books" src="images/book-spine.png"/></button>           
+             </div>
+             <div class="activated">
+                <button class="book-button" id="doerr" onclick="displayAppear(this.id)" ><img class="all-books" src="images/book-spine.png"/></button>
+            </div>
+             <div>
+                <button class="book-button"><img class="all-books" src="images/book-spine.png"/></button>            
+            </div>
+            <div>
+                <button class="book-button"><img class="all-books" src="images/book-spine.png"/></button>            
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+
+    class book_info {
+        constructor(title, author, summary, book_cover, author_pic, rating) {
+            this.title = title;
+            this.author = author;
+            this.summary = summary;
+            this.book_cover = book_cover;
+            this.author_pic = author_pic;
+            this.rating = rating;
+        }
+    } 
+    
+    const baldwin = new book_info("Go Tell It on the Mountain", "James Baldwin", 
+    "First published in 1953, is Baldwin's first major work, and a novel that has established itself as an American classic. With lyrical precision, psychological directness, resonating symbolic power, and a rage that is at once unrelenting and compassionate, Baldwin chronicles a fourteen-year-old boy's discovery of the terms of his identity as the stepson of the minister of a storefront Pentecostal church in Harlem one Saturday in March of 1935. Baldwin's rendering of his protagonist's spiritual, sexual, and moral struggle of self-invention opened new possibilities in the American language and in the way Americans understand themselves."
+    , "url(books/mountain.jpg)", "authors/baldwin.jpg"
+    , "My rating: 5/5 stars");
+    
+    const hosseini = new book_info("The Kite Runner", "Khaled Hosseini",
+    "1970s Afghanistan: Twelve-year-old Amir is desperate to win the local kite-fighting tournament and his loyal friend Hassan promises to help him. But neither of the boys can foresee what will happen to Hassan that afternoon, an event that is to shatter their lives..."
+    , "url(books/runner.jpg)", "authors/hosseini.jpg"
+    , "My rating: 5/5 stars");
+
+    const murakami = new book_info("Kafka on the shore", "Haruki Murakami", 
+    "Kafka on the Shore is powered by two remarkable characters: a teenage boy, Kafka Tamura, who runs away from home either to escape a gruesome oedipal prophecy or to search for his long-missing mother and sister; and an aging simpleton called Nakata, who never recovered from a wartime affliction and now is drawn toward Kafka for reasons that, like the most basic activities of daily life, he cannot fathom."
+    , "url(books/kafka.jpg)", "authors/murakami.jpg"
+    , "My rating: 5/5 stars");
+
+    const doerr = new book_info("All the Light We Cannot See", "Anthony Doerr", 
+    "Marie-Laure lives in Paris near the Museum of Natural History, where her father works. When she is twelve, the Nazis occupy Paris and father and daughter flee to the walled citadel of Saint-Malo, where Marie-Laure’s reclusive great uncle lives in a tall house by the sea. With them they carry what might be the museum’s most valuable and dangerous jewel."
+    , "url(books/light.jpg)", "authors/doerr.jpg"
+    , "My rating: 5/5 stars");
+
+
+    function displayAppear(id) {
+        document.getElementById("book-cover").style.display = 'flex';
+
+        switch(id) {
+            case "baldwin":
+                document.getElementById("book-cover").style.backgroundImage = baldwin.book_cover;  
+                document.getElementById("author-name").innerHTML = baldwin.author;
+                document.getElementById("author-img").src = baldwin.author_pic;
+                document.getElementById("summary").innerHTML = baldwin.summary;
+                document.getElementById("rating").innerHTML = baldwin.rating;
+                break;
+            
+            case "hosseini":
+                document.getElementById("book-cover").style.backgroundImage = hosseini.book_cover;  
+                document.getElementById("author-name").innerHTML = hosseini.author;
+                document.getElementById("author-img").src = hosseini.author_pic;
+                document.getElementById("summary").innerHTML = hosseini.summary;
+                document.getElementById("rating").innerHTML = hosseini.rating;
+                break;  
+                
+            case "murakami":
+                document.getElementById("book-cover").style.backgroundImage = murakami.book_cover;  
+                document.getElementById("author-name").innerHTML = murakami.author;
+                document.getElementById("author-img").src = murakami.author_pic;
+                document.getElementById("summary").innerHTML = murakami.summary;
+                document.getElementById("rating").innerHTML = murakami.rating;
+                break;  
+
+            case "doerr":
+                document.getElementById("book-cover").style.backgroundImage = doerr.book_cover;   
+                document.getElementById("author-name").innerHTML = doerr.author;
+                document.getElementById("author-img").src = doerr.author_pic;
+                document.getElementById("summary").innerHTML = doerr.summary;
+                document.getElementById("rating").innerHTML = doerr.rating;
+                break;  
+        }   
+    };
+
+    function bookDisappear(){
+        document.getElementById("book-cover").style.display = 'none';
+    };
+
+    function displayDisappear(){
+        document.getElementById("open-book").style.display = 'none';
+    };
+
+    function openBook(id){
+        document.getElementById("book-cover").style.display = 'none';
+        document.getElementById("open-book").style.display = 'flex';
+    };
+    
+</script>
+
+</html>
